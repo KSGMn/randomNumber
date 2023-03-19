@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -218,7 +219,8 @@
             android:gravity="center"
             android:inputType="number"
             android:maxLength="2"
-            android:text="0"
+            android:hint="0"
+            android:text=""
             android:textColor="@color/black" />
 
         <EditText
@@ -231,7 +233,8 @@
             android:gravity="center"
             android:inputType="number"
             android:maxLength="2"
-            android:text="0"
+            android:hint="0"
+            android:text=""
             android:textColor="@color/black" />
 
         <EditText
@@ -244,7 +247,8 @@
             android:gravity="center"
             android:inputType="number"
             android:maxLength="2"
-            android:text="0"
+            android:hint="0"
+            android:text=""
             android:textColor="@color/black" />
 
         <EditText
@@ -257,7 +261,8 @@
             android:gravity="center"
             android:inputType="number"
             android:maxLength="2"
-            android:text="0"
+            android:hint="0"
+            android:text=""
             android:textColor="@color/black" />
 
         <EditText
@@ -270,7 +275,8 @@
             android:gravity="center"
             android:inputType="number"
             android:maxLength="2"
-            android:text="0"
+            android:hint="0"
+            android:text=""
             android:textColor="@color/black" />
 
     </LinearLayout>

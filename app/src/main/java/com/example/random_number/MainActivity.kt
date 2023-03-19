@@ -27,22 +27,13 @@ class MainActivity : AppCompatActivity() {
         //로또 번호 생성 버튼
             binding.btn.setOnClickListener {
 
-            if (binding.edit1.text.isEmpty() ||
-                binding.edit2.text.isEmpty() ||
-                binding.edit3.text.isEmpty() ||
-                binding.edit4.text.isEmpty() ||
-                binding.edit5.text.isEmpty()
-            ) {
-                Toast.makeText(this, "0또는 숫자를 입력하세요.", Toast.LENGTH_SHORT).show()
-            } else {
-
                 editRandomNumber(binding)
 
-                val text1 = binding.edit1.text?.toString()?.toInt()
-                val text2 = binding.edit2.text?.toString()?.toInt()
-                val text3 = binding.edit3.text?.toString()?.toInt()
-                val text4 = binding.edit4.text?.toString()?.toInt()
-                val text5 = binding.edit5.text?.toString()?.toInt()
+                val text1 = if (binding.edit1.text.isNotEmpty()) binding.edit1.text?.toString()?.toInt() else 0
+                val text2 = if (binding.edit2.text.isNotEmpty()) binding.edit1.text?.toString()?.toInt() else 0
+                val text3 = if (binding.edit3.text.isNotEmpty()) binding.edit1.text?.toString()?.toInt() else 0
+                val text4 = if (binding.edit4.text.isNotEmpty()) binding.edit1.text?.toString()?.toInt() else 0
+                val text5 = if (binding.edit5.text.isNotEmpty()) binding.edit1.text?.toString()?.toInt() else 0
 
                 findAllDuplicates(editRandomNumber(binding))
                 val findlist = findAllDuplicates(editRandomNumber(binding)).toList()
@@ -63,16 +54,16 @@ class MainActivity : AppCompatActivity() {
                         )
                     }
                 }
-            }
+
         }
         //로또 선택 번호 리셋 버튼
         binding.resetbtn.setOnClickListener {
             val number = 0
-            binding.edit1.setText(number.toString())
-            binding.edit2.setText(number.toString())
-            binding.edit3.setText(number.toString())
-            binding.edit4.setText(number.toString())
-            binding.edit5.setText(number.toString())
+            binding.edit1.setText("")
+            binding.edit2.setText("")
+            binding.edit3.setText("")
+            binding.edit4.setText("")
+            binding.edit5.setText("")
         }
         //로또 당첨 번호 조회 버튼
         binding.winbtn.setOnClickListener {
@@ -160,18 +151,18 @@ class MainActivity : AppCompatActivity() {
 
         val editlist = ArrayList<Int>()
 
-        val text1 = binding.edit1.text?.toString()?.toInt()
-        val text2 = binding.edit2.text?.toString()?.toInt()
-        val text3 = binding.edit3.text?.toString()?.toInt()
-        val text4 = binding.edit4.text?.toString()?.toInt()
-        val text5 = binding.edit5.text?.toString()?.toInt()
+        val text1 = if (binding.edit1.text.isNotEmpty()) binding.edit1.text?.toString()?.toInt() else 0
+        val text2 = if (binding.edit2.text.isNotEmpty()) binding.edit2.text?.toString()?.toInt() else 0
+        val text3 = if (binding.edit3.text.isNotEmpty()) binding.edit3.text?.toString()?.toInt() else 0
+        val text4 = if (binding.edit4.text.isNotEmpty()) binding.edit4.text?.toString()?.toInt() else 0
+        val text5 = if (binding.edit5.text.isNotEmpty()) binding.edit5.text?.toString()?.toInt() else 0
 
 
-        if (binding.edit1.text.isNotEmpty()) editlist.add(text1!!) else editlist.add(0)
-        if (binding.edit2.text.isNotEmpty()) editlist.add(text2!!) else editlist.add(0)
-        if (binding.edit3.text.isNotEmpty()) editlist.add(text3!!) else editlist.add(0)
-        if (binding.edit4.text.isNotEmpty()) editlist.add(text4!!) else editlist.add(0)
-        if (binding.edit5.text.isNotEmpty()) editlist.add(text5!!) else editlist.add(0)
+        if (binding.edit1.text.isNotEmpty()) editlist.add(text1!!) else editlist.add(text1!!)
+        if (binding.edit2.text.isNotEmpty()) editlist.add(text2!!) else editlist.add(text2!!)
+        if (binding.edit3.text.isNotEmpty()) editlist.add(text3!!) else editlist.add(text3!!)
+        if (binding.edit4.text.isNotEmpty()) editlist.add(text4!!) else editlist.add(text4!!)
+        if (binding.edit5.text.isNotEmpty()) editlist.add(text5!!) else editlist.add(text5!!)
 
         editlist.removeAll(listOf(0))
 
